@@ -1,3 +1,3 @@
 # CAPformer
 
-Coming soon
+Code and model will come soon!
