@@ -1,13 +1,15 @@
-# Pedestrian Crossing Action Prediction Benchmark
+# CAPformer
+[[Paper]](https://www.mdpi.com/1424-8220/21/17/5694)
+**NOTE**: It is important to highlight that most of the code belongs to a previous version of [ykotseruba/PedestrianActionBenchmark](https://github.com/ykotseruba/PedestrianActionBenchmark). References to it have been included in the LICENSE file and in the [citation](#citation) section.
+## Abstract
 
-Benchmark for evaluating pedestrian action prediction algorithms that inlcude code for training, testing and evaluating baseline and state-of-the-art models for pedestrian action prediction on PIE and JAAD datasets.
+Anticipating pedestrian crossing behavior in urban scenarios is a challenging task for autonomous vehicles. Early this year, a benchmark comprising JAAD and PIE datasets have been released. In the benchmark, several state-of-the-art methods have been ranked. However, most of the ranked temporal models rely on recurrent architectures. In our case, we propose, as far as we are concerned, the first self-attention alternative, based on transformer architecture, which has had enormous success in natural language processing (NLP) and recently in computer vision. Our architecture is composed of various branches which fuse video and kinematic data. The video branch is based on two possible architectures: RubiksNet and TimeSformer. The kinematic branch is based on different configurations of transformer encoder. Several experiments have been performed mainly focusing on pre-processing input data, highlighting problems with two kinematic data sources: pose keypoints and ego-vehicle speed. Our proposed model results are comparable to PCPA, the best performing model in the benchmark reaching an F1 Score of nearly 0.78 against 0.77. Furthermore, by using only bounding box coordinates and image data, our model surpasses PCPA by a larger margin (F1=0.75 vs. F1=0.72). Our model has proven to be a valid alternative to recurrent architectures, providing advantages such as parallelization and whole sequence processing, learning relationships between samples not possible with recurrent architectures.
+
+## System diagram
 
 <p align="center">
-  <img src="crossing_prediction_task.png" />
+  <img src="capformer-diagram.png" />
 </p>
-
-
-**Paper: [I. Kotseruba, A. Rasouli, J.K. Tsotsos, Benchmark for evaluating pedestrian action prediction. WACV, 2021](https://openaccess.thecvf.com/content/WACV2021/papers/Kotseruba_Benchmark_for_Evaluating_Pedestrian_Action_Prediction_WACV_2021_paper.pdf)** (see [citation](#citation) information below).
 
 
 # Installation instructions
@@ -99,6 +101,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you use the results, analysis or code for the models presented in the paper, please cite:
 
 ```
+@Article{s21175694,
+AUTHOR = {Lorenzo, Javier and Alonso, Ignacio Parra and Izquierdo, Rubén and Ballardini, Augusto Luis and Saz, Álvaro Hernández and Llorca, David Fernández and Sotelo, Miguel Ángel},
+TITLE = {CAPformer: Pedestrian Crossing Action Prediction Using Transformer},
+JOURNAL = {Sensors},
+VOLUME = {21},
+YEAR = {2021},
+NUMBER = {17},
+ARTICLE-NUMBER = {5694},
+URL = {https://www.mdpi.com/1424-8220/21/17/5694},
+PubMedID = {34502584},
+ISSN = {1424-8220},
+DOI = {10.3390/s21175694}
+}
+
 @inproceedings{kotseruba2021benchmark,
 	title={{Benchmark for Evaluating Pedestrian Action Prediction}},
 	author={Kotseruba, Iuliia and Rasouli, Amir and Tsotsos, John K},
