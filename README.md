@@ -1,5 +1,6 @@
 # CAPformer
 [[Paper]](https://www.mdpi.com/1424-8220/21/17/5694)
+
 **NOTE**: It is important to highlight that most of the code belongs to a previous version of [ykotseruba/PedestrianActionBenchmark](https://github.com/ykotseruba/PedestrianActionBenchmark). References to it have been included in the LICENSE file and in the [citation](#citation) section.
 ## Abstract
 
