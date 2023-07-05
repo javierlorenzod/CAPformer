@@ -3318,12 +3318,12 @@ class CAPformer(ActionPredict):
             tf_enc_inputs = layers.Concatenate(axis=-1)(network_inputs[1:])
         else:
             tf_enc_inputs = network_inputs[1]
-            tf_features = Encoder(num_layers=num_layers, d_model=d_model, num_heads=num_heads,
-                                    dff=dff, rate=dropout_rate)(tf_enc_inputs,None)
-            #tf_features = Dense(name='final_emb_' + data_types[i],units=attention_size)(tf_features)
-            encoder_outputs.append(
-                tf_features
-                    )
+        tf_features = Encoder(num_layers=num_layers, d_model=d_model, num_heads=num_heads,
+                                dff=dff, rate=dropout_rate)(tf_enc_inputs,None)
+        #tf_features = Dense(name='final_emb_' + data_types[i],units=attention_size)(tf_features)
+        encoder_outputs.append(
+            tf_features
+                )
 
         if len(encoder_outputs) > 1:
             att_enc_out = []
